@@ -1,0 +1,36 @@
+package day10;
+
+class Area {
+    protected double radius;   // protected so subclass can access
+
+    Area(double r) {
+        this.radius = r;
+    }
+    
+    public void circleArea() {
+        System.out.println("Area of circle is: " + (3.14 * radius * radius));
+    }
+}
+class Cylinder extends Area
+{
+	private double height;
+	Cylinder(double r, double h) {
+        super(r);   
+        this.height = h;
+    }
+	public void cylinderArea()
+	{
+		System.out.println("Area of Cylinder is:"+(2 * 3.14 * radius * height) + (2 * 3.14 * radius * radius));
+	}
+
+
+	public static void main(String[] args) {
+		Area a=new Area(7);
+		a.circleArea();
+		Cylinder c=new Cylinder(7,32);
+		c.cylinderArea();
+				
+		}
+}
+
+
